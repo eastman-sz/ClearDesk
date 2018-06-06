@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.main.MainActivity"
+    android:orientation="vertical"
+
+    >
+
+    <com.common.base.CustomFontTextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="page2"
+        android:gravity="center"
+
+        />
+
+
+
+
+</LinearLayout>

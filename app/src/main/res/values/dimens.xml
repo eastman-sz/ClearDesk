@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dgv_overlap_if_switch_straight_line">16dp</dimen>
+
+    <dimen name="s1">9sp</dimen>
+    <dimen name="s2">11sp</dimen>
+    <dimen name="s3">12sp</dimen>
+    <dimen name="s4">13sp</dimen>
+    <dimen name="s5">14sp</dimen>
+    <dimen name="s6">15sp</dimen>
+    <dimen name="s7">16sp</dimen>
+    <dimen name="s8">17sp</dimen>
+    <dimen name="s9">19sp</dimen>
+    <dimen name="s10">23sp</dimen>
+    <dimen name="s11">24sp</dimen>
+    <dimen name="s12">28sp</dimen>
+    <dimen name="s13">38sp</dimen>
+    <dimen name="s14">48sp</dimen>
+    <dimen name="s100">100sp</dimen>
+
+</resources>

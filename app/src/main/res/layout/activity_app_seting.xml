@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.sys.AppSetingActivity"
+    android:background="@color/c6"
+    android:orientation="vertical"
+    >
+    <com.common.base.CommonTitleView
+        android:id="@+id/commonTitleView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <com.common.base.CustomFontTextView
+        android:id="@+id/sysetingTextView"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:gravity="center_vertical"
+        android:textSize="@dimen/s4"
+        android:textColor="@color/c8"
+        android:text="系统设置"
+        android:paddingLeft="15dp"
+        android:clickable="true"
+        android:onClick="onBtnClick"
+        />
+
+    <ImageView style="@style/full_line_style" />
+
+    <com.common.base.CustomFontTextView
+        android:id="@+id/appSettingTextView"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:gravity="center_vertical"
+        android:textSize="@dimen/s4"
+        android:textColor="@color/c8"
+        android:text="应用设置"
+        android:paddingLeft="15dp"
+        android:clickable="true"
+        android:onClick="onBtnClick"
+        />
+
+    <ImageView style="@style/full_line_style" />
+
+</LinearLayout>

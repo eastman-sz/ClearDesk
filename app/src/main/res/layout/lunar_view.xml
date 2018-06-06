@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.main.MainActivity"
+    android:orientation="vertical"
+    >
+    <com.common.base.CustomFontTextView
+        android:id="@+id/currentDateTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:textColor="@color/c8"
+        android:textSize="@dimen/s8"
+        />
+
+    <com.common.base.CustomFontDigitTextView
+        android:id="@+id/currentTimeTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:textColor="@color/c8"
+        android:textSize="@dimen/s12"
+        android:layout_marginTop="5dp"
+        />
+
+    <com.common.base.CustomFontTextView
+        android:id="@+id/lunarTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:textColor="@color/c8"
+        android:textSize="@dimen/s4"
+        android:layout_marginTop="5dp"
+        />
+
+
+
+</LinearLayout>
