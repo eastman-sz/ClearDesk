@@ -4,7 +4,7 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.View
 import com.base.BaseView
-import com.imageloader.UniversalImageLoadTool
+import com.glide.GlideHelper
 import com.sz.sk.clear.desk.R
 import kotlinx.android.synthetic.main.main_bg_sub_view.view.*
 
@@ -23,7 +23,7 @@ class MainBgSubView : BaseView {
     }
 
     fun setImageResource(imgPath : String){
-        UniversalImageLoadTool.disPlay("file://" +imgPath , imageView , R.drawable.def_loading_rectangle_image)
+        GlideHelper.display(imageView , imgPath)
     }
 
 }

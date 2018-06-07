@@ -6,6 +6,7 @@ import android.os.Handler
 import android.os.Looper
 import android.util.AttributeSet
 import android.view.View
+import com.anim.NGGuidePageTransformer
 import com.base.BaseView
 import com.common.base.IonPageChangeListener
 import com.gallery.GalleryDbHelper
@@ -38,6 +39,7 @@ class MainBgView : BaseView {
 
         adapter = GalleryPagerAdapter(context , list)
         viewPager.adapter = adapter
+        viewPager.setPageTransformer(true , NGGuidePageTransformer())
 
         viewPager.addOnPageChangeListener(object : IonPageChangeListener(){
             override fun onPageSelected(index: Int) {
@@ -65,11 +67,15 @@ class MainBgView : BaseView {
         true
     }
 
-    fun startLoop(){
-        handler.sendEmptyMessageDelayed(0 , 1500)
+    private fun startLoop(){
+        handler.sendEmptyMessageDelayed(0 , 10000)
     }
 
-    fun refreshGallery(){
+    private fun stopLoop(){
+        handler.removeMessages(0)
+    }
+
+    private fun refreshGallery(){
         dataList.clear()
         dataList.addAll(GalleryDbHelper.getAllGalleryPath())
     }
@@ -85,8 +91,12 @@ class MainBgView : BaseView {
             BroadcastAction.GALLERY_IMAGE_REFRESH -> {
                 refreshGallery()
             }
-
         }
+    }
+
+    override fun onDetachedFromWindow() {
+        stopLoop()
+        super.onDetachedFromWindow()
     }
 
 }
