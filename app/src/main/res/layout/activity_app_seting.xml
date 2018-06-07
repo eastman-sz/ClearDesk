@@ -43,4 +43,19 @@
 
     <ImageView style="@style/full_line_style" />
 
+    <com.common.base.CustomFontTextView
+        android:id="@+id/bgImageSetTextView"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:gravity="center_vertical"
+        android:textSize="@dimen/s4"
+        android:textColor="@color/c8"
+        android:text="画册设置"
+        android:paddingLeft="15dp"
+        android:clickable="true"
+        android:onClick="onBtnClick"
+        />
+
+    <ImageView style="@style/full_line_style" />
+
 </LinearLayout>

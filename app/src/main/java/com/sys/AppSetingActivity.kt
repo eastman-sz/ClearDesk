@@ -4,8 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import android.provider.Settings
 import android.view.View
+import com.album.AlbumUtils
 import com.common.base.BaseAppCompactActivitiy
 import com.common.base.CommonTitleView
+import com.gallery.GalleryDbHelper
 import com.sz.sk.clear.desk.R
 import kotlinx.android.synthetic.main.activity_app_seting.*
 
@@ -35,6 +37,12 @@ class AppSetingActivity : BaseAppCompactActivitiy() {
 
             appSettingTextView -> {
 
+            }
+
+            bgImageSetTextView -> {
+                AlbumUtils.getInstance().toSelectPictures(context , 100 , {
+                    GalleryDbHelper.save(it)
+                })
             }
         }
 
