@@ -9,6 +9,7 @@ import com.common.base.BaseAppCompactActivitiy
 import com.common.base.CommonTitleView
 import com.gallery.GalleryDbHelper
 import com.sz.sk.clear.desk.R
+import com.util.PkgUtil
 import kotlinx.android.synthetic.main.activity_app_seting.*
 
 class AppSetingActivity : BaseAppCompactActivitiy() {
@@ -36,7 +37,7 @@ class AppSetingActivity : BaseAppCompactActivitiy() {
             }
 
             appSettingTextView -> {
-
+                PkgUtil.getLauncherApps(context)
             }
 
             bgImageSetTextView -> {

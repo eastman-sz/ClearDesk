@@ -4,6 +4,8 @@ import android.content.Context
 import android.content.Intent
 import android.util.AttributeSet
 import android.view.View
+import com.appinfo.AppInfo
+import com.appinfo.DeskAppInfoAdapter
 import com.appinfo.LocalAppInfoAdapter
 import com.base.BaseView
 import com.draggridview.DynamicGridView
@@ -14,8 +16,8 @@ import kotlinx.android.synthetic.main.main_page_a_view.view.*
 
 class MainPage1VIew : BaseView {
 
-    val list = ArrayList<LocalAppInfo>()
-    var adapter : LocalAppInfoAdapter ?= null
+    val list = ArrayList<AppInfo>()
+    var adapter : DeskAppInfoAdapter ?= null
 
     constructor(context: Context) : super(context){
         init()
@@ -28,11 +30,14 @@ class MainPage1VIew : BaseView {
     override fun initViews() {
         View.inflate(context , R.layout.main_page_a_view , this)
 
-        val appInfo = LocalAppInfo(context.packageName , "应用设置" , "v1.0.0" , resources.getDrawable(R.drawable.setting))
+        val appInfo = AppInfo()
+        appInfo.packageName = context.packageName
+        appInfo.name = "应用设置"
+        appInfo.drawable = resources.getDrawable(R.drawable.setting)
 
         list.add(appInfo)
 
-        adapter = LocalAppInfoAdapter(context , list)
+        adapter = DeskAppInfoAdapter(context , list)
         dynamicGridView.adapter = adapter
 
         adapter?.notifyDataSetChanged()
@@ -54,7 +59,7 @@ class MainPage1VIew : BaseView {
 
         dynamicGridView.setOnItemClickListener { parent, view, position, id ->
             val localAppInfo = list.get(position)
-            val pkgName = localAppInfo.pkgName
+            val pkgName = localAppInfo.packageName
             when(pkgName){
                 context.packageName -> {
 

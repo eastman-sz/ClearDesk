@@ -47,7 +47,7 @@ class MainBgView : BaseView {
                     return
                 }
                 ILog.e("pageIndex: $index  地址 ${dataList.get(index % dataList.size)}")
-                list.get(index % 3).setImageResource(dataList.get(index % dataList.size))
+                list[index % 3].setImageResource(dataList.get(index % dataList.size))
             }
         })
 
@@ -59,7 +59,7 @@ class MainBgView : BaseView {
     internal val handler = Handler(Looper.getMainLooper()){
         when(it.what){
             0 ->{
-                viewPager.setCurrentItem(viewPager.currentItem + 1 , true)
+                viewPager.setCurrentItem((viewPager.currentItem + 1)%10000 , true)
 
                 startLoop()
             }
