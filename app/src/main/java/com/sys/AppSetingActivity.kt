@@ -35,9 +35,7 @@ class AppSetingActivity : BaseAppCompactActivitiy() {
 
             appSettingTextView -> {
 
-
             }
-
         }
 
 

@@ -20,12 +20,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
     sourceSets {
         main {
             jniLibs.srcDirs = ['Libs']
         }
     }
+    buildToolsVersion '27.0.3'
 }
 
 repositories {
@@ -44,4 +44,5 @@ dependencies {
     implementation files('libs/utilslib.jar')
     implementation files('libs/fastjson-1.1.34.android.jar')
     implementation(name: 'commonviewslib', ext: 'aar')
+    implementation files('libs/universalimageloader_1.9.1.jar')
 }
