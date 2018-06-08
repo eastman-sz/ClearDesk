@@ -9,5 +9,6 @@ class AppInfo {
     var drawable : Drawable ?= null
     var iconPath : String ?= ""
     var type = 0
+    var pageIndex = 0
 
 }
