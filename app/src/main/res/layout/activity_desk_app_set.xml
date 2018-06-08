@@ -5,12 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.sys.DeskAppSetActivity"
+    android:orientation="vertical"
+    android:background="@color/white"
     >
     <com.common.base.CommonTitleView
         android:id="@+id/commonTitleView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-
+    <GridView
+        android:id="@+id/gridView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:fadeScrollbars="true"
+        />
 
 </LinearLayout>
