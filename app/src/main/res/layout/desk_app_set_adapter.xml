@@ -8,27 +8,56 @@
     android:orientation="vertical"
     >
 
-    <LinearLayout
+    <RelativeLayout
+        android:id="@+id/topLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_height="match_parent"
+        android:background="@color/transparent"
         >
-        <ImageView
-            android:id="@+id/iconImageView"
+        <RelativeLayout
+            android:id="@+id/appInfoLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:scaleType="center"
-            />
+            android:orientation="vertical"
+            android:clickable="true"
+            >
+            <ImageView
+                android:id="@+id/iconImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitCenter"
+                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"
+                />
 
-        <com.common.base.CustomFontTextView
-            android:id="@+id/nameTextView"
+            <com.common.base.CustomFontTextView
+                android:id="@+id/nameTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iconImageView"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/s2"
+                android:maxLines="2"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:layout_marginTop="5dp"
+                />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/addIconImageView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textColor="@color/white"
-            android:textSize="@dimen/s2"
+            android:layout_height="match_parent"
+            android:src="@drawable/add_icon"
+            android:scaleType="fitCenter"
+            android:visibility="gone"
+            android:layout_centerInParent="true"
+            android:clickable="true"
             />
-    </LinearLayout>
+    </RelativeLayout>
+
+
 
 
 

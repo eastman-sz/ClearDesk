@@ -10,5 +10,6 @@ class AppInfo {
     var iconPath : String ?= ""
     var type = 0
     var pageIndex = 0
+    var version : String ?= ""
 
 }

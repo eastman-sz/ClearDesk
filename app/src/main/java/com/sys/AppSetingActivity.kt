@@ -37,7 +37,7 @@ class AppSetingActivity : BaseAppCompactActivitiy() {
             }
 
             appSettingTextView -> {
-                PkgUtil.getLauncherApps(context)
+                startActivity(Intent(context , DeskAppSetActivity::class.java))
             }
 
             bgImageSetTextView -> {

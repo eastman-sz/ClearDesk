@@ -22,6 +22,28 @@ class DeskAppInfoDbHelper {
             db.insert(DBNAME , null , contentValue)
         }
 
+        fun getDeskApps(pageIndex: Int)  : List<AppInfo>{
+            val list = ArrayList<AppInfo>()
+            var cursor : Cursor ?= null
+            try {
+                val db = ISqliteDataBase.getSqLiteDatabase()
+                cursor = db.query(DBNAME , null , "pageIndex = ? " , arrayOf(pageIndex.toString()) , null , null , null)
+                if (null == cursor){
+                    return list
+                }
+                while (cursor.moveToNext()){
+                    val appInfo = fromCusor(cursor)
+
+                    list.add(appInfo)
+                }
+            }catch (e : Exception){
+                e.printStackTrace()
+            }finally {
+                cursor?.close()
+            }
+            return list
+        }
+
         fun getDeskApps() : List<AppInfo>{
             val list = ArrayList<AppInfo>()
             var cursor : Cursor ?= null
