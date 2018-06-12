@@ -58,7 +58,35 @@ class PkgUtil : PkgHelper() {
             return appInfos
         }
 
+        fun getAllInstalledApps(context: Context) : List<AppInfo>{
+            val appInfos = ArrayList<AppInfo>()
+            val manager = context.packageManager
+            val pakList = manager.getInstalledPackages(0)
 
+            try {
+                val var4 = pakList.iterator()
+
+                while (var4.hasNext()) {
+                    val info = var4.next() as PackageInfo
+
+                    val icon = info.applicationInfo.loadIcon(manager)
+                    val labelName = info.applicationInfo.loadLabel(manager) as String
+                    val pkgName = info.packageName
+                    val version = info.versionName
+
+                    val appInfo = AppInfo()
+                    appInfo.name = labelName
+                    appInfo.drawable = icon
+                    appInfo.packageName = pkgName
+                    appInfo.version = version
+
+                    appInfos.add(appInfo)
+                }
+            } catch (var11: Exception) {
+                var11.printStackTrace()
+            }
+            return appInfos
+        }
 
 
 

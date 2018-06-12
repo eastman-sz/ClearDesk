@@ -34,7 +34,9 @@ class LunarView : BaseView {
         today.time = chineseDateFormat.parse(DateHepler.timestampFormat(currentTimestamp , "yyyy年MM月dd日"))
         val lunar = Lunar(today)
 
-        currentDateTextView.text = DateHepler.timestampFormat(currentTimestamp , "MM月dd日")
+        val dayOfWeek = DateHepler.getDayOfWeekTxt(DateHepler.getDayOfWeek(currentTimestamp))
+
+        currentDateTextView.text = DateHepler.timestampFormat(currentTimestamp , "MM月dd日").plus("  ").plus(dayOfWeek)
 
         currentTimeTextView.text = DateHepler.timestampFormat(currentTimestamp , "HH:mm")
 

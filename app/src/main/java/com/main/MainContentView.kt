@@ -1,9 +1,7 @@
 package com.main
 
 import android.content.Context
-import android.icu.text.IDNA
 import android.util.AttributeSet
-import android.util.Log
 import android.view.View
 import com.base.BaseView
 import com.common.base.BasePagerAdapter
@@ -29,8 +27,8 @@ class MainContentView : BaseView {
 
         val list = ArrayList<BaseView>()
         list.add(InfoVIew(context))
-        list.add(MainPage1VIew(context))
-        list.add(MainPage2VIew(context))
+        list.add(MainPage1VIew(context , 0))
+        list.add(MainPage1VIew(context , 1))
 
         val adapter = BasePagerAdapter<BaseView>(context , list)
         viewPager.adapter = adapter

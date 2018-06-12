@@ -24,7 +24,10 @@ class MainPage1VIew : BaseView {
 
     private var loaded = false
 
-    constructor(context: Context) : super(context){
+    private var pageIndex : Int = 0
+
+    constructor(context: Context , pageIndex : Int) : super(context){
+        this.pageIndex = pageIndex
         init()
     }
 
@@ -84,7 +87,7 @@ class MainPage1VIew : BaseView {
     private fun onPageAppRefresh(){
         doAsync {
             //当前页面
-            val pageApps = DeskAppInfoDbHelper.getDeskApps(0)
+            val pageApps = DeskAppInfoDbHelper.getDeskApps(pageIndex)
             val isEmpty = pageApps.isEmpty()
             when(isEmpty){
                 false -> {
@@ -118,12 +121,14 @@ class MainPage1VIew : BaseView {
     }
 
     private fun addDef(){
-        val appInfo = AppInfo()
-        appInfo.packageName = context.packageName
-        appInfo.name = "应用设置"
-        appInfo.drawable = resources.getDrawable(R.drawable.setting)
+        if (0 == pageIndex){
+            val appInfo = AppInfo()
+            appInfo.packageName = context.packageName
+            appInfo.name = "应用设置"
+            appInfo.drawable = resources.getDrawable(R.drawable.setting)
 
-        list.add(appInfo)
+            list.add(appInfo)
+        }
     }
 
     override fun addBroadCastAction(): java.util.ArrayList<String> {

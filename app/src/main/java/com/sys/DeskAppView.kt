@@ -31,10 +31,7 @@ class DeskAppView : BaseView {
     override fun initViews() {
         View.inflate(context , R.layout.desk_app_view , this)
 
-        val appInfo = AppInfo()
-        appInfo.type = 100
-
-        list.add(appInfo)
+        addDef()
 
         adapter = DeskAppSetAdapter(context , list)
         gridView.adapter = adapter
@@ -89,9 +86,18 @@ class DeskAppView : BaseView {
 
                 list.addAll(0 , pageApps)
 
+                addDef()
+
                 adapter?.notifyDataSetChanged()
             }
         }
+    }
+
+    private fun addDef(){
+        val appInfo = AppInfo()
+        appInfo.type = 100
+
+        list.add(appInfo)
     }
 
     override fun addBroadCastAction(): java.util.ArrayList<String> {
