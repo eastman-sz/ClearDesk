@@ -39,9 +39,11 @@ class MainContentView : BaseView {
             override fun onPageSelected(index: Int) {
                 onMainContentViewPageChangeListener?.onPageIndexChange(index)
 
+                list[index].freshByHand(true)
             }
         })
 
+        list[1].freshByHand(true)
     }
 
 }

@@ -6,6 +6,7 @@ class BroadcastAction {
 
         const val GALLERY_IMAGE_REFRESH = "galleryImageRefresh"
 
+        const val PAGE_APP_REFRESH = "pageAppRefresh"
 
     }
 

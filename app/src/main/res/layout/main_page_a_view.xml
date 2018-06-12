@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,19 +8,36 @@
     android:orientation="vertical"
     android:background="@color/transparent"
     >
-    <com.common.base.CustomFontTextView
+
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:background="@color/c8"
+        android:alpha="0.25"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:background="@color/transparent"
-        />
+        android:orientation="vertical"
+        >
+        <com.common.base.CustomFontTextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/transparent"
+            />
 
-    <com.draggridview.DynamicGridView
-        android:id="@+id/dynamicGridView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:numColumns="@integer/column_count"
-        android:background="@color/c10"
-        />
+        <com.draggridview.DynamicGridView
+            android:id="@+id/dynamicGridView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:numColumns="@integer/column_count"
+            android:paddingRight="15dp"
+            android:paddingLeft="15dp"
+            />
+    </LinearLayout>
 
-</LinearLayout>
+
+</RelativeLayout>

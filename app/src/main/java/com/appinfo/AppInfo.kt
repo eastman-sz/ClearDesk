@@ -11,5 +11,6 @@ class AppInfo {
     var type = 0
     var pageIndex = 0
     var version : String ?= ""
+    var selected = false
 
 }

@@ -12,14 +12,17 @@ class DeskAppInfoDbHelper {
 
     companion object {
 
-        fun save(name : String , packageName : String , pageIndex : Int){
+        fun save(name : String? , packageName : String? , pageIndex : Int){
             val contentValue = ContentValues()
             contentValue.put("name" , name)
             contentValue.put("packageName" , packageName)
             contentValue.put("pageIndex" , pageIndex)
 
             val db = ISqliteDataBase.getSqLiteDatabase()
-            db.insert(DBNAME , null , contentValue)
+            val count = db.update(DBNAME , contentValue , "packageName = ?" , arrayOf(packageName))
+            if (count < 1){
+                db.insert(DBNAME , null , contentValue)
+            }
         }
 
         fun getDeskApps(pageIndex: Int)  : List<AppInfo>{

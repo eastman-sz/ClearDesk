@@ -5,6 +5,7 @@ import com.appinfo.AppInfo
 import com.common.base.BaseAppCompactActivitiy
 import com.common.base.BasePagerAdapter
 import com.common.base.CommonTitleView
+import com.common.base.IonPageChangeListener
 import com.sz.sk.clear.desk.R
 import kotlinx.android.synthetic.main.activity_desk_app_set.*
 
@@ -36,6 +37,13 @@ class DeskAppSetActivity : BaseAppCompactActivitiy() {
         val adapter = BasePagerAdapter<DeskAppView>(context , list)
         viewPager.adapter = adapter
 
+        viewPager.addOnPageChangeListener(object : IonPageChangeListener(){
+            override fun onPageSelected(index: Int) {
+                list[index].freshByHand(true)
+            }
+        })
+
+        list[0].freshByHand(true)
     }
 
 
