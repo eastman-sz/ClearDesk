@@ -22,6 +22,7 @@ class DeskAppSetActivity : BaseAppCompactActivitiy() {
 
     override fun initTitle() {
         commonTitleView.setCenterTitleText("桌面应用设备")
+        commonTitleView.setLeftBtnText("返回")
         commonTitleView.setOnTitleClickListener(object : CommonTitleView.OnTitleClickListener(){
             override fun onLeftBtnClick() {
                 finish()
@@ -40,6 +41,8 @@ class DeskAppSetActivity : BaseAppCompactActivitiy() {
         viewPager.addOnPageChangeListener(object : IonPageChangeListener(){
             override fun onPageSelected(index: Int) {
                 list[index].freshByHand(true)
+
+                dotView.onSwithItem(index)
             }
         })
 

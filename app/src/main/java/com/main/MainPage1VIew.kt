@@ -13,6 +13,7 @@ import com.sys.AppSetingActivity
 import com.sz.sk.clear.desk.R
 import com.util.BroadcastAction
 import com.util.PkgUtil
+import com.utils.lib.ss.common.PkgHelper
 import kotlinx.android.synthetic.main.main_page_a_view.view.*
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
@@ -68,6 +69,10 @@ class MainPage1VIew : BaseView {
 
 
                     context.startActivity(Intent(context , AppSetingActivity::class.java))
+                }
+
+                else ->{
+                    PkgHelper.openAPKByPkgName(context , pkgName)
                 }
             }
 
