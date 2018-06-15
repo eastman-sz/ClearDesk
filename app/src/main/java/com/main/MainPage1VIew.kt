@@ -12,6 +12,7 @@ import com.draggridview.DynamicGridView
 import com.sys.AppSetingActivity
 import com.sz.sk.clear.desk.R
 import com.util.BroadcastAction
+import com.util.ILog
 import com.util.PkgUtil
 import com.utils.lib.ss.common.PkgHelper
 import kotlinx.android.synthetic.main.main_page_a_view.view.*
@@ -52,7 +53,7 @@ class MainPage1VIew : BaseView {
             }
 
             override fun onDragStarted(position: Int) {
-
+                ILog.e("onDragStarted: $position")
             }
         })
 
