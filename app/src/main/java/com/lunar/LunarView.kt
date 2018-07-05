@@ -7,6 +7,7 @@ import android.view.View
 import com.base.BaseView
 import com.lunar.Lunar.chineseDateFormat
 import com.sz.sk.clear.desk.R
+import com.util.ILog
 import com.utils.lib.ss.common.DateHepler
 import kotlinx.android.synthetic.main.lunar_view.view.*
 import java.util.*
@@ -29,7 +30,7 @@ class LunarView : BaseView {
 
     }
 
-    fun showDate(){
+    private fun showDate(){
         val currentTimestamp = System.currentTimeMillis()/1000
 
         val today = Calendar.getInstance()
@@ -49,10 +50,12 @@ class LunarView : BaseView {
     override fun addBroadCastAction(): ArrayList<String> {
         val list = ArrayList<String>()
         list.add(Intent.ACTION_TIME_TICK)
-        return super.addBroadCastAction()
+        return list
     }
 
     override fun onBroadCastReceive(context: Context?, action: String?, intent: Intent?) {
+        ILog.e("-----Action-------:: $action")
+
         when(action){
             Intent.ACTION_TIME_TICK ->{
                 showDate()
