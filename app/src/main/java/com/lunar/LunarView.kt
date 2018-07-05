@@ -1,6 +1,7 @@
 package com.lunar
 
 import android.content.Context
+import android.content.Intent
 import android.util.AttributeSet
 import android.view.View
 import com.base.BaseView
@@ -9,6 +10,7 @@ import com.sz.sk.clear.desk.R
 import com.utils.lib.ss.common.DateHepler
 import kotlinx.android.synthetic.main.lunar_view.view.*
 import java.util.*
+import kotlin.collections.ArrayList
 
 class LunarView : BaseView {
 
@@ -42,6 +44,20 @@ class LunarView : BaseView {
 
         lunarTextView.text = lunar.toString()
 
+    }
+
+    override fun addBroadCastAction(): ArrayList<String> {
+        val list = ArrayList<String>()
+        list.add(Intent.ACTION_TIME_TICK)
+        return super.addBroadCastAction()
+    }
+
+    override fun onBroadCastReceive(context: Context?, action: String?, intent: Intent?) {
+        when(action){
+            Intent.ACTION_TIME_TICK ->{
+                showDate()
+            }
+        }
     }
 
 }
