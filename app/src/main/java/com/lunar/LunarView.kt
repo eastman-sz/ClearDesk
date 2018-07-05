@@ -37,7 +37,7 @@ class LunarView : BaseView {
         today.time = chineseDateFormat.parse(DateHepler.timestampFormat(currentTimestamp , "yyyy年MM月dd日"))
         val lunar = Lunar(today)
 
-        val dayOfWeek = DateHepler.getDayOfWeekTxt(DateHepler.getDayOfWeek(currentTimestamp))
+        val dayOfWeek = DateHepler.getDayOfWeekString(currentTimestamp)
 
         currentDateTextView.text = DateHepler.timestampFormat(currentTimestamp , "MM月dd日").plus("  ").plus(dayOfWeek)
 
@@ -54,8 +54,6 @@ class LunarView : BaseView {
     }
 
     override fun onBroadCastReceive(context: Context?, action: String?, intent: Intent?) {
-        ILog.e("-----Action-------:: $action")
-
         when(action){
             Intent.ACTION_TIME_TICK ->{
                 showDate()

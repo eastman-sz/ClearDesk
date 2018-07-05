@@ -17,7 +17,7 @@
             android:id="@+id/iconImageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:scaleType="fitCenter"
+            android:scaleType="centerCrop"
             android:layout_marginTop="10dp"
             android:layout_centerHorizontal="true"
             />
@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/iconImageView"
             android:gravity="center"
-            android:textColor="@color/c8"
+            android:textColor="@color/white"
             android:textSize="@dimen/s2"
             android:maxLines="2"
             android:paddingLeft="5dp"
