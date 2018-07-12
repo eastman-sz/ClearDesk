@@ -2,8 +2,7 @@ package com.application;
 
 import android.app.Application;
 import android.content.Context;
-
-import com.imageloader.UniversalImageLoadTool;
+import com.photo.third.UniversalImageLoadTool;
 
 public class IApplication extends Application {
 

@@ -7,7 +7,6 @@ import android.view.View
 import com.base.BaseView
 import com.lunar.Lunar.chineseDateFormat
 import com.sz.sk.clear.desk.R
-import com.util.ILog
 import com.utils.lib.ss.common.DateHepler
 import kotlinx.android.synthetic.main.lunar_view.view.*
 import java.util.*
