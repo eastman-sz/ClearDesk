@@ -47,7 +47,14 @@
         <activity android:name="com.main.MainActivity" />
         <activity android:name="com.draggridview.demo.DragGridviewDemoActivity" />
         <activity android:name="com.sys.AppSetingActivity" />
-        <activity android:name="com.sys.DeskAppSetActivity"></activity>
+        <activity android:name="com.sys.DeskAppSetActivity"/>
+
+
+        <!-- 高德地图 -->
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="7128f889c9e4cf79ecc95f69bd8993b4" />
+
     </application>
 
 </manifest>
