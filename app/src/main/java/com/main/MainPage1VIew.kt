@@ -9,7 +9,7 @@ import com.appinfo.DeskAppInfoAdapter
 import com.appinfo.DeskAppInfoDbHelper
 import com.base.BaseView
 import com.draggridview.DynamicGridView
-import com.sys.AppSetingActivity
+import com.sys.AppSettingActivity
 import com.sz.sk.clear.desk.R
 import com.util.BroadcastAction
 import com.util.ILog
@@ -69,7 +69,7 @@ class MainPage1VIew : BaseView {
                 context.packageName -> {
 
 
-                    context.startActivity(Intent(context , AppSetingActivity::class.java))
+                    context.startActivity(Intent(context , AppSettingActivity::class.java))
                 }
 
                 else ->{

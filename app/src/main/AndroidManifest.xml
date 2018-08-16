@@ -49,7 +49,7 @@
         </activity>
         <activity android:name="com.main.MainActivity" />
         <activity android:name="com.draggridview.demo.DragGridviewDemoActivity" />
-        <activity android:name="com.sys.AppSetingActivity" />
+        <activity android:name="com.sys.AppSettingActivity" />
         <activity android:name="com.sys.DeskAppSetActivity" />
 
         <!-- 高德地图 -->

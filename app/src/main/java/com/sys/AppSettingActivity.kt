@@ -11,7 +11,7 @@ import com.sz.sk.clear.desk.R
 import kotlinx.android.synthetic.main.activity_app_seting.*
 import org.jetbrains.anko.startActivity
 
-class AppSetingActivity : BaseAppCompactActivitiy() {
+class AppSettingActivity : BaseAppCompactActivitiy() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
