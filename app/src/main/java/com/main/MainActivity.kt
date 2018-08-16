@@ -5,6 +5,7 @@ import android.os.Handler
 import android.os.Looper
 import com.common.base.BaseAppCompactActivitiy
 import com.sz.sk.clear.desk.R
+import com.util.Constant
 import com.util.LauncherHelper
 
 class MainActivity : BaseAppCompactActivitiy() {
@@ -16,8 +17,18 @@ class MainActivity : BaseAppCompactActivitiy() {
         initActivitys()
 
         Handler(Looper.getMainLooper()).postDelayed({
+            if (Constant.DEBUG){
+                return@postDelayed
+            }
             LauncherHelper.resetPreferredLauncherAndOpenChooser(this)
 
         } , 1500)
+    }
+
+    override fun onBackPressed() {
+        if (Constant.DEBUG){
+            super.onBackPressed()
+            return
+        }
     }
 }

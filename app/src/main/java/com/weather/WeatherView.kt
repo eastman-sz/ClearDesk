@@ -48,6 +48,14 @@ class WeatherView : BaseView {
         gdLocationHelper?.startLocation()
     }
 
+    override fun initListener() {
+        textView.setOnClickListener {
+            if (textView.text.length == 6){
+                gdLocationHelper?.startLocation()
+            }
+        }
+    }
+
     private val mHandler = Handler(Looper.getMainLooper()){
         when(it.what){
             0 ->{

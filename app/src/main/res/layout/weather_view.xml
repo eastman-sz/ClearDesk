@@ -15,6 +15,7 @@
         android:textColor="@color/white"
         android:textSize="@dimen/s4"
         android:paddingLeft="15dp"
+        android:text="点击显示天气"
         />
 
 </LinearLayout>
