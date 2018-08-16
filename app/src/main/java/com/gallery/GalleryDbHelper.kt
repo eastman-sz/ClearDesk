@@ -15,8 +15,6 @@ class GalleryDbHelper {
     companion object {
 
         fun save(imgPaths : List<String>){
-            delete()
-
             val db = ISqliteDataBase.getSqLiteDatabase()
             db.beginTransaction()
             try {
@@ -25,7 +23,11 @@ class GalleryDbHelper {
                     val contentValues = ContentValues()
                     contentValues.put("imgPath" , it)
 
-                    db.insert(DBNAME , null , contentValues)
+                    val count = db.update(DBNAME , contentValues , "imgPath = ? " , arrayOf(it))
+                    if (count < 1){
+                        db.insert(DBNAME , null , contentValues)
+                    }
+
                 }
             }catch (e : Exception){
                 e.printStackTrace()
@@ -58,7 +60,12 @@ class GalleryDbHelper {
             return list
         }
 
-        fun delete(){
+        fun delete(img : String){
+            val db = ISqliteDataBase.getSqLiteDatabase()
+            db.delete(DBNAME , "imgPath = ? " , arrayOf(img))
+        }
+
+        private fun delete(){
             val db = ISqliteDataBase.getSqLiteDatabase()
             db.delete(DBNAME , null , null)
         }

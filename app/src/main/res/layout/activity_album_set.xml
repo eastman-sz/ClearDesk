@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.album.AlbumSetActivity"
+    android:background="@color/sfs_page_bg_color"
+    android:orientation="vertical"
+    >
+    <com.common.base.CommonTitleView
+        android:id="@+id/commonTitleView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        >
+        <com.common.base.CustomFontTextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:textColor="@color/c8"
+            android:textSize="@dimen/sfs_s4"
+            android:text="是否开启滚动背景图"
+            />
+
+        <Switch
+            android:id="@+id/switchBtn"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:paddingRight="15dp"
+            />
+    </LinearLayout>
+
+    <ImageView style="@style/full_line_style"/>
+
+    <LinearLayout
+        android:id="@+id/albumLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/white"
+        >
+        <com.common.base.CustomFontTextView
+            android:id="@+id/imgCountTextView"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:textSize="@dimen/s2"
+            android:gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:text="已选择1张图片"
+            />
+
+        <ImageView style="@style/full_line_style"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none"
+            android:overScrollMode="never"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/transparent"
+                >
+
+                <com.common.base.GridViewExtend
+                    android:id="@+id/gridViewExtend"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:horizontalSpacing="1dp"
+                    android:verticalSpacing="1dp"
+                    />
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

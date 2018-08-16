@@ -4,13 +4,12 @@ import android.content.Intent
 import android.os.Bundle
 import android.provider.Settings
 import android.view.View
+import com.album.AlbumSetActivity
 import com.common.base.BaseAppCompactActivitiy
 import com.common.base.CommonTitleView
-import com.gallery.GalleryDbHelper
-import com.photo.album.ImgHelper
-import com.photo.album.OnImgSelectResultListener
 import com.sz.sk.clear.desk.R
 import kotlinx.android.synthetic.main.activity_app_seting.*
+import org.jetbrains.anko.startActivity
 
 class AppSetingActivity : BaseAppCompactActivitiy() {
 
@@ -41,11 +40,7 @@ class AppSetingActivity : BaseAppCompactActivitiy() {
             }
 
             bgImageSetTextView -> {
-                ImgHelper.selectImg(context , 100 , object : OnImgSelectResultListener{
-                    override fun onResult(imgList: List<String>) {
-                        GalleryDbHelper.save(imgList)
-                    }
-                })
+                startActivity<AlbumSetActivity>()
             }
         }
 

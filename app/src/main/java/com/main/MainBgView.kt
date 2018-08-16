@@ -13,9 +13,11 @@ import com.gallery.GalleryDbHelper
 import com.gallery.GalleryPagerAdapter
 import com.sz.sk.clear.desk.R
 import com.util.BroadcastAction
-import com.util.ILog
+import com.util.PrefHelper
 import kotlinx.android.synthetic.main.main_bg_view.view.*
-
+/**
+ * 背景轮播图
+ */
 class MainBgView : BaseView {
 
     val dataList = ArrayList<String>()
@@ -43,10 +45,14 @@ class MainBgView : BaseView {
 
         viewPager.addOnPageChangeListener(object : IonPageChangeListener(){
             override fun onPageSelected(index: Int) {
+                val enabled = PrefHelper.isGalleryEnabled()
+                if (!enabled){
+                    return
+                }
                 if (dataList.isEmpty()){
                     return
                 }
-                ILog.e("pageIndex: $index  地址 ${dataList.get(index % dataList.size)}")
+//                ILog.e("pageIndex: $index  地址 ${dataList.get(index % dataList.size)}")
                 list[index % 3].setImageResource(dataList.get(index % dataList.size))
             }
         })
@@ -56,7 +62,7 @@ class MainBgView : BaseView {
         startLoop()
     }
 
-    internal val handler = Handler(Looper.getMainLooper()){
+    private val mHandler = Handler(Looper.getMainLooper()){
         when(it.what){
             0 ->{
                 viewPager.setCurrentItem((viewPager.currentItem + 1)%10000 , true)
@@ -68,16 +74,27 @@ class MainBgView : BaseView {
     }
 
     private fun startLoop(){
-        handler.sendEmptyMessageDelayed(0 , 10000)
+        if (!PrefHelper.isGalleryEnabled()){
+            return
+        }
+        mHandler.removeMessages(0)
+        mHandler.sendEmptyMessageDelayed(0 , 10000)
     }
 
     private fun stopLoop(){
-        handler.removeMessages(0)
+        mHandler.removeMessages(0)
     }
 
     private fun refreshGallery(){
-        dataList.clear()
-        dataList.addAll(GalleryDbHelper.getAllGalleryPath())
+        if (PrefHelper.isGalleryEnabled()){
+            dataList.clear()
+            dataList.addAll(GalleryDbHelper.getAllGalleryPath())
+            startLoop()
+        }else{
+            dataList.clear()
+            stopLoop()
+        }
+
     }
 
     override fun addBroadCastAction(): java.util.ArrayList<String> {
